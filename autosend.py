@@ -1,22 +1,21 @@
 import pywhatkit
 import datetime
 import json
-import pytest
-from classes import person
+from classes import Person
 
 f = open('config.json')
 data = json.load(f)
 
 today = datetime.date.today()
-thisyear = today.year
+this_year = today.year
 
-raffaela = person(datetime.date(thisyear, 1, 31),data['raffaelanumber'], 'Hey Raffaela! Alles Gute zum Geburtstag :D')
-davidP = person(datetime.date(thisyear, 8, 2), data['davidnumber'], 'Yo fuckface, happy birthday!')
+raffaela = Person(datetime.date(this_year, 1, 31),data['raffaela_number'], 'Hey Raffaela! Alles Gute zum Geburtstag :D')
+david_pie = Person(datetime.date(this_year, 8, 2), data['david_number'], 'Yo fuckface, happy birthday!')
 
 
 people = []
 people.append(raffaela)
-people.append(davidP)
+people.append(david_pie)
 
 for x in people:
     if today == x.birthday:
